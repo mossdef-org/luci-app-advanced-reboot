@@ -11,7 +11,7 @@ PKG_RELEASE:=8
 PKG_CPE_ID:=cpe:/a:mossdef:luci-app-advanced-reboot
 
 LUCI_TITLE:=Advanced Linksys Reboot Web UI
-LUCI_URL:=https://github.com/mossdef-org/luci-app-advanced-reboot/
+LUCI_URL:=https://docs.mossdef.org/luci-app-advanced-reboot/
 LUCI_DESCRIPTION:=Provides Web UI (found under System/Advanced Reboot) to reboot supported Linksys and ZyXEL routers to\
 	an alternative partition. Also provides Web UI to shut down (power off) your device. 	Supported dual-partition\
 	routers are listed at https://docs.mossdef.org/luci-app-advanced-reboot/
