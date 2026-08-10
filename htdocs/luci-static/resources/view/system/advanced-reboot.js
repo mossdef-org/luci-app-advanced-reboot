@@ -345,7 +345,12 @@ return view.extend({
 	load: function () {
 		return Promise.all([
 			uci.changes(),
-			L.resolveDefault(fs.stat("/sbin/poweroff"), null),
+			// rpcd resolves symlinks before the ACL check on stat(), and
+			// /sbin/poweroff is a busybox applet link, so stat() is denied.
+			// lstat() is not resolved; fall back for rpcd without lstat.
+			L.resolveDefault(fs.lstat("/sbin/poweroff"), null).then(function (s) {
+				return s || L.resolveDefault(fs.stat("/sbin/poweroff"), null);
+			}),
 			this.callObtainDeviceInfo(),
 		]);
 	},

@@ -12,7 +12,8 @@
 				"system": [ "reboot" ]
 			},
 			"file": {
-				"/sbin/poweroff": [ "list", "exec" ]
+				"/sbin/poweroff": [ "list", "exec" ],
+				"/bin/busybox": [ "list" ]
 			}
 		}
 	}
